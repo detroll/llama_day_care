@@ -21,7 +21,7 @@
         <td><%= llama.name %></td>
         <td><%= llama.breed %></td>
         <td><%= llama.age %></td>
-        <td><%= llama.owner %></td>
+        <td><%= llama.try(:owner).try(:name) %></td>
         <td><%= link_to 'Show', llama %></td>
         <td><%= link_to 'Edit', edit_llama_path(llama) %></td>
         <td><%= link_to 'Destroy', llama, method: :delete, data: { confirm: 'Are you sure?' } %></td>
