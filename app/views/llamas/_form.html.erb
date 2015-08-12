@@ -1,0 +1,34 @@
+<%= form_for(@llama) do |f| %>
+  <% if @llama.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@llama.errors.count, "error") %> prohibited this llama from being saved:</h2>
+
+      <ul>
+      <% @llama.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :breed %><br>
+    <%= f.text_field :breed %>
+  </div>
+  <div class="field">
+    <%= f.label :age %><br>
+    <%= f.number_field :age %>
+  </div>
+  <div class="field">
+    <%= f.label :owner %><br>
+    <%= f.text_field :owner %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+  
+<% end %>

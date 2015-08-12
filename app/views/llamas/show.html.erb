@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @llama.name %>
+</p>
+
+<p>
+  <strong>Breed:</strong>
+  <%= @llama.breed %>
+</p>
+
+<p>
+  <strong>Age:</strong>
+  <%= @llama.age %>
+</p>
+
+<p>
+  <strong>Owner:</strong>
+  <%= @llama.owner %>
+</p>
+
+<%= link_to 'Edit', edit_llama_path(@llama) %> |
+<%= link_to 'Back', llamas_path %>
