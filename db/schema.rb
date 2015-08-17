@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150812144414) do
+ActiveRecord::Schema.define(version: 20150817150746) do
 
   create_table "birth_places", force: :cascade do |t|
     t.string   "birth"
@@ -19,16 +19,23 @@ ActiveRecord::Schema.define(version: 20150812144414) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "breeds", force: :cascade do |t|
+    t.string   "breed"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "llamas", force: :cascade do |t|
     t.string   "name"
-    t.string   "breed"
     t.integer  "age"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string   "owner"
     t.integer  "owner_id"
+    t.integer  "breed_id"
   end
 
+  add_index "llamas", ["breed_id"], name: "index_llamas_on_breed_id"
   add_index "llamas", ["owner_id"], name: "index_llamas_on_owner_id"
 
   create_table "mother_names", force: :cascade do |t|
